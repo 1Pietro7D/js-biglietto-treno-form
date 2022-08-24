@@ -1,0 +1,18 @@
+main {
+  height: 100vh;
+  background-color: hsl(338deg 80% 40%);
+}
+h2 {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+.my-card {
+  max-width: 1000px;
+  background-color: #fff;
+}
+
+/* debug */
+.my-card {
+  height: 200px;
+}
