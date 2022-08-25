@@ -1,18 +1,65 @@
+:root {
+  --my-c-principal-theme: hsl(338deg 80% 40%);
+  --my-c-grey-theme: hsl(0deg 0% 50%);
+}
+
+/*** general ***/
+
+label {
+  color: var(--my-c-principal-theme);
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+select {
+  width: 189px;
+  height: 30px;
+}
+
+.my-personal-h-100 {
+  height: calc(100% - 24px) !important;
+}
+/*** /general ***/
+
+/*** utilities ***/
+
+.my-card {
+  max-width: 1000px;
+  background-color: #fff;
+}
+
+.my-grey-card {
+  background-color: var(--my-c-grey-theme);
+}
+
+.pad-reset {
+  padding-left: 0px;
+}
+
+.b {
+  font-weight: bold;
+}
+
+/*** /utilities ***/
+
 main {
   height: 100vh;
-  background-color: hsl(338deg 80% 40%);
+  background-color: var(--my-c-principal-theme);
 }
 h2 {
   color: #fff;
   text-transform: uppercase;
   text-align: center;
 }
-.my-card {
-  max-width: 1000px;
-  background-color: #fff;
-}
 
-/* debug */
-.my-card {
-  height: 200px;
+/* media queries */
+
+@media screen and (min-width: 500px) {
+  .my-card {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .my-personal-h-100 {
+    height: calc(100% - 48px) !important;
+  }
 }

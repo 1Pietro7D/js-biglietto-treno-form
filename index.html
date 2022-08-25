@@ -11,19 +11,92 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <script type="text/javascript" src="js/ticket-calc.js"></script>
+    <script type="text/javascript" src="js/ticket-calc.js" defer></script>
     <title>Ticket train</title>
   </head>
   <body>
     <main>
-      <div class="container h-100 d-flex flex-column justify-content-around">
+      <div
+        class="container h-100 d-flex flex-column justify-content-around px-4"
+      >
+        <!-- compila ticket -->
         <div class="row justify-content-center">
           <h2>calcola il prezzo del tuo biglietto</h2>
-          <div class="col-10 my-card rounded-4"></div>
+          <div class="row col-12 col-lg-10 my-card rounded-4 p-2 p-md-4 p-lg-5">
+            <form action="/action_page.php">
+              <div class="h-100 d-flex flex-column justify-content-between">
+                <div class="col-12 row g-0 justify-content-between">
+                  <div class="col-12 col-md-8 col-lg-3 text-center m-auto">
+                    <label for="username">Nome Cognome</label>
+                    <input
+                      type="text"
+                      placeholder="Nome e Cognome"
+                      id="username"
+                      name="username"
+                    />
+                  </div>
+                  <div class="col-12 col-md-8 col-lg-3 text-center m-auto">
+                    <label for="username">Km da percorrere</label>
+                    <input
+                      placeholder="scrivi in numero i km"
+                      type="number"
+                      step="0.01"
+                      id="distance"
+                      name="distance"
+                    />
+                  </div>
+                  <div class="col-12 col-md-8 col-lg-3 text-center m-auto">
+                    <label for="age">Fascia d'età</label>
+                    <select id="age" name="age">
+                      <option value="underage">Minorenne</option>
+                      <option value="adult" selected>Maggiorenne</option>
+                      <option value="senior_citizen">Over 65</option>
+                      <option value="centenary">Centenary</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="text-center d-flex justify-content-center gap-3">
+                  <input type="button" value="Submit" />
+                  <button>Annulla</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
+        <!-- /compila ticket -->
+        <!-- genera ticket -->
         <div class="row justify-content-center">
           <h2>il tuo biglietto</h2>
-          <div class="col-10 my-card"></div>
+          <div class="col-10 my-card gx-0 p-4">
+            <h5 class="text-uppercase m-0">dettagli passeggiero</h5>
+            <div class="row my-personal-h-100 g-0">
+              <div class="col my-grey-card p-4">
+                <h5 class="text-uppercase">nome passeggiero</h5>
+                <p class="text-capitalize"></p>
+              </div>
+              <div class="col row g-0 ps-4 h-100">
+                <p class="mt-4 b">Offerta</p>
+                <p class="mb-4 align-self-end">Biglietto standard</p>
+              </div>
+              <div class="col row g-0 ps-4 h-100">
+                <p class="mt-4 b">Carrozza</p>
+                <p class="mb-4 align-self-end">5</p>
+              </div>
+
+              <div class="col row g-0 ps-4 h-100">
+                <p class="mt-4 b">Codice CP</p>
+                <p class="mb-4 align-self-end">789594</p>
+              </div>
+              <div class="col row g-0 ps-4 h-100">
+                <p class="mt-4 b">Costo biglietto</p>
+                <p class="mb-4 align-self-end">ciao</p>
+              </div>
+
+              <!-- ANOMALIA CON CLASSE .b, DOVREBBE ESSERCI IN BOOTSTRAP MA NON
+              FUNZIONA... PERCHÈ? -->
+            </div>
+          </div>
+          <!-- /genera ticket -->
         </div>
       </div>
     </main>
