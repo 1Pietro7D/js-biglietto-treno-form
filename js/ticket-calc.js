@@ -38,13 +38,17 @@ console.log("js ok");
 
 const annul = document.getElementById("annul");
 const submit = document.getElementById("submit");
-const age = document.getElementById("age");
-const distance = document.getElementById("distance");
-const username = document.getElementById("username");
+
 const ticket = document.getElementById("ticket");
 
 submit.addEventListener("click", function () {
   console.log("mi hai cliccato per il ticket");
+  const age = document.getElementById("age").value;
+  const distance = document.getElementById("distance").value;
+  const username = document.getElementById("username").value;
+  console.log(username);
+  console.log(distance);
+  console.log(age);
 
   ticket.classList.remove("d-none");
 });
