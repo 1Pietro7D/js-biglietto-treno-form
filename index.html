@@ -19,13 +19,14 @@
       <div
         class="container h-100 d-flex flex-column justify-content-around px-4"
       >
-        <!-- compila ticket -->
+        <!-- Write off ticket -->
         <div class="row justify-content-center">
           <h2>calcola il prezzo del tuo biglietto</h2>
           <div class="row col-12 col-lg-10 my-card rounded-4 p-2 p-md-4 p-lg-5">
             <form action="/action_page.php">
               <div class="h-100 d-flex flex-column justify-content-between">
                 <div class="col-12 row g-0 justify-content-between">
+                  <!-- username input -->
                   <div class="col-12 col-md-8 col-lg-3 text-center m-auto">
                     <label for="username">Nome Cognome</label>
                     <input
@@ -35,8 +36,11 @@
                       name="username"
                     />
                   </div>
+                  <!-- username input -->
+
+                  <!-- distance input -->
                   <div class="col-12 col-md-8 col-lg-3 text-center m-auto">
-                    <label for="username">Km da percorrere</label>
+                    <label for="distance">Km da percorrere</label>
                     <input
                       placeholder="scrivi in numero i km"
                       type="number"
@@ -45,6 +49,9 @@
                       name="distance"
                     />
                   </div>
+                  <!-- /distance input -->
+
+                  <!-- age input -->
                   <div class="col-12 col-md-8 col-lg-3 text-center m-auto">
                     <label for="age">Fascia d'età</label>
                     <select id="age" name="age">
@@ -54,25 +61,27 @@
                       <option value="centenary">Centenary</option>
                     </select>
                   </div>
+                  <!-- age input -->
                 </div>
                 <div class="text-center d-flex justify-content-center gap-3">
-                  <input type="button" value="Submit" />
-                  <button>Annulla</button>
+                  <input type="button" value="Genera" id="submit" />
+                  <input type="button" value="Annulla" id="annul" />
                 </div>
               </div>
             </form>
           </div>
         </div>
-        <!-- /compila ticket -->
-        <!-- genera ticket -->
-        <div class="row justify-content-center">
+        <!-- /Write off ticket -->
+
+        <!-- Calcolate ticket -->
+        <div class="row justify-content-center d-none" id="ticket">
           <h2>il tuo biglietto</h2>
           <div class="col-10 my-card gx-0 p-4">
             <h5 class="text-uppercase m-0">dettagli passeggiero</h5>
             <div class="row my-personal-h-100 g-0">
               <div class="col my-grey-card p-4">
                 <h5 class="text-uppercase">nome passeggiero</h5>
-                <p class="text-capitalize"></p>
+                <p class="text-capitalize" id="name-ticket"></p>
               </div>
               <div class="col row g-0 ps-4 h-100">
                 <p class="mt-4 b">Offerta</p>
@@ -89,14 +98,14 @@
               </div>
               <div class="col row g-0 ps-4 h-100">
                 <p class="mt-4 b">Costo biglietto</p>
-                <p class="mb-4 align-self-end">ciao</p>
+                <p class="mb-4 align-self-end" id="price">ciao</p>
               </div>
 
               <!-- ANOMALIA CON CLASSE .b, DOVREBBE ESSERCI IN BOOTSTRAP MA NON
               FUNZIONA... PERCHÈ? -->
             </div>
           </div>
-          <!-- /genera ticket -->
+          <!-- /Calcolate ticket -->
         </div>
       </div>
     </main>
