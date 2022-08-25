@@ -83,8 +83,20 @@ submit.addEventListener("click", function () {
   const total_price = price - discount;
   // /applico lo sconto
   console.log(total_price);
+
+  // creo il collegamneto per poi scrivere i dati
+  const nameTicketHTML = document.getElementById("name-ticket");
+  const total_priceHTML = document.getElementById("total_price");
+
+  // trascrivo i dati nell'html nella seconda card ora visibile
+  nameTicketHTML.innerHTML = username;
+  total_priceHTML.innerHTML = new Intl.NumberFormat("de-DE", {
+    style: "currency",
+    currency: "EUR",
+  }).format(total_price);
 });
 
+// opzione per annullare il ticket
 annul.addEventListener("click", function () {
   console.log("mi hai cliccato per annullare");
 
