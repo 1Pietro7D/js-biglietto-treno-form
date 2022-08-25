@@ -36,25 +36,57 @@ alert(
 
 console.log("js ok");
 
+// variable
+
 const annul = document.getElementById("annul");
 const submit = document.getElementById("submit");
+const ticketHTML = document.getElementById("ticket");
 
-const ticket = document.getElementById("ticket");
-
+// input element
 submit.addEventListener("click", function () {
-  console.log("mi hai cliccato per il ticket");
+  // recupera l'età
   const age = document.getElementById("age").value;
+  // recupera la distanza
   const distance = document.getElementById("distance").value;
+  // recupera il nome
   const username = document.getElementById("username").value;
+  // calcola il prezzo per la distanza
+  const price = 0.21 * distance;
+
+  // console log
+  console.log("mi hai cliccato per il ticket");
   console.log(username);
   console.log(distance);
   console.log(age);
+  console.log(price);
+  ticketHTML.classList.remove("d-none");
+  // /console log
 
-  ticket.classList.remove("d-none");
+  // applico lo sconto
+  let discountPercent = 0;
+
+  switch (age) {
+    case "underage": {
+      discountPercent = 20;
+      break;
+    }
+    case "senior_citizen": {
+      discountPercent = 40;
+      break;
+    }
+    case "centenary": {
+      discountPercent = 100;
+      break;
+    }
+  }
+  const discount = (price / 100) * discountPercent;
+  const total_price = price - discount;
+  // /applico lo sconto
+  console.log(total_price);
 });
 
 annul.addEventListener("click", function () {
   console.log("mi hai cliccato per annullare");
 
-  ticket.classList.add("d-none");
+  ticketHTML.classList.add("d-none");
 });
